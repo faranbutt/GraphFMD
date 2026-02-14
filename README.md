@@ -18,7 +18,7 @@ View the real-time rankings here: **[https://faranbutt.github.io/GraphFMD/](http
 
 ## 🚀 How to Participate
 
-To ensure the secrecy of the test labels and participant data, we use a **Secure Submission Portal**. You no longer need to open Pull Requests.
+To ensure the secrecy of the test labels and participant data, we use a **Secure Submission Portal**.
 
 ### Step 1: Prepare your Files
 You must prepare two files:
