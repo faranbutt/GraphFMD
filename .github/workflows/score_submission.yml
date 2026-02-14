@@ -1,0 +1,109 @@
+name: Score Private Submission
+on:
+  repository_dispatch:
+    types: [form_submission]
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
+
+      - name: Load Submission Data
+        run: |
+          set +x 
+          echo "::add-mask::${{ github.event.client_payload.file_id }}"
+          FILE_ID="${{ github.event.client_payload.file_id }}"
+          
+          mkdir -p submissions/temp
+          cat << 'EOF' > submissions/temp/metadata.json
+          ${{ github.event.client_payload.metadata }}
+          EOF
+          
+          wget -q --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+            "https://docs.google.com/uc?export=download&id=${FILE_ID}" -O- | \
+            sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p' > /tmp/confirm.txt
+          
+          CONFIRM=$(cat /tmp/confirm.txt)
+          if [ -z "$CONFIRM" ]; then
+            wget -q --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&id=${FILE_ID}" -O submissions/temp/predictions.csv
+          else
+            wget -q --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=${CONFIRM}&id=${FILE_ID}" -O submissions/temp/predictions.csv
+          fi
+          set -x
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install -q pandas scikit-learn
+          if [ -f requirements.txt ]; then pip install -q -r requirements.txt; fi
+
+      - name: Check One Submission Policy
+        id: check_user
+        run: |
+          USER_NAME="${{ github.event.client_payload.username }}"
+          if [ -f "leaderboard/leaderboard.csv" ] && grep -q "$USER_NAME" leaderboard/leaderboard.csv; then
+            echo "SKIP_SUBMISSION=true" >> $GITHUB_ENV
+            echo "::notice::User $USER_NAME has already submitted. Skipping."
+          else
+            echo "SKIP_SUBMISSION=false" >> $GITHUB_ENV
+          fi
+
+      - name: Validate and Score
+        if: env.SKIP_SUBMISSION == 'false'
+        id: scoring
+        env:
+          HIDDEN_CSV_URL: ${{ secrets.HIDDEN_CSV }}
+        run: |
+          set +x
+          echo "::add-mask::$HIDDEN_CSV_URL"
+          mkdir -p data/private
+          FILE_ID_GT=$(echo $HIDDEN_CSV_URL | sed -n 's/.*d\/\([^\/]*\).*/\1/p' | sed 's/\/view?usp=sharing//')
+          if [ -z "$FILE_ID_GT" ]; then FILE_ID_GT=$HIDDEN_CSV_URL; fi
+          wget -q --no-check-certificate 'https://docs.google.com/uc?export=download&id='${FILE_ID_GT} -O data/private/hidden_labels.csv
+          
+          python3 competition/validate_submission.py submissions/temp/predictions.csv data/public/test_nodes.csv > /dev/null 2>&1
+          
+          SCORE_OUT=$(python3 competition/evaluate.py submissions/temp/predictions.csv data/private/hidden_labels.csv)
+          SCORE=$(echo $SCORE_OUT | grep -oP 'SCORE=\K[0-9.]+' || echo "0.0")
+          
+          echo "score=$SCORE" >> $GITHUB_OUTPUT
+          echo "team=$(python3 -c "import json; print(json.load(open('submissions/temp/metadata.json')).get('team', 'unknown'))")" >> $GITHUB_OUTPUT
+          echo "model=$(python3 -c "import json; print(json.load(open('submissions/temp/metadata.json')).get('model', 'unknown'))")" >> $GITHUB_OUTPUT
+          set -x
+
+      - name: Update Leaderboard
+        if: env.SKIP_SUBMISSION == 'false'
+        run: |
+          python3 competition/update_leaderboard.py \
+            "${{ github.event.client_payload.username }}" \
+            "form-submission" \
+            "${{ steps.scoring.outputs.score }}" \
+            "human" \
+            "${{ steps.scoring.outputs.model }}" \
+            "Submitted via Secure Google Form"
+          
+          python3 competition/render_leaderboard.py
+
+      - name: Commit and Push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          rm -rf submissions/temp/
+          rm -rf data/private/
+          git add leaderboard/leaderboard.csv leaderboard/leaderboard.md docs/index.html
+          if ! git diff --staged --quiet; then
+            git commit -m "Leaderboard update: ${{ github.event.client_payload.username }}"
+            git push origin main
+          fi
