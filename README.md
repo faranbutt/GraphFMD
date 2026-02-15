@@ -55,8 +55,8 @@ Once you submit the form:
 
 * **Task:** Binary Node Classification (Licit vs. Illicit).
 * **Domain:** Cryptocurrency (Bitcoin) Forensics.
-* **Target:** Predict the probability that a transaction is **Illicit (Class 1)**.
-* **Metric:** **F1-Score (Macro)** (calculated specifically on the Illicit class).
+* **Target:** Predict the class label of each transaction (Illicit = 1, Licit = 2).
+* **Metric:** **Macro-F1 across both classes (Illicit and Licit)**.  
 
 ## 2. The Data
 * **Nodes (Node Feature Matrix (X)):** Bitcoin transactions.165 local and aggregate features. (Train =  16658 , Test = 8896)
