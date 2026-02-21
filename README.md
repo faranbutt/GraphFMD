@@ -152,10 +152,11 @@ For questions regarding the competition setup, data preprocessing or automated s
 ### Learning Resources
 * **[Basira Lab]** [Deep Graph Learning Playlist](https://www.youtube.com/watch?v=gQRV_jUyaDw&list=PLug43ldmRSo14Y_vt7S6vanPGh-JpHR7T) – Essential video tutorials for GNN fundamentals.
 * **[Basira Lab]** [Deep Graph Learning GitHub](https://github.com/basiralab/DGL) – Codebase and implementations for graph-based models.
+* **[DiaGraph]** [Maha Trabelsi - Node Classification Under Noise](https://github.com/mahatrabelsi1/GNN-MVP-Node-Classification-Under-Noise) – This project provided foundational inspiration for the noise-robustness and automated evaluation framework used in this competition.
+---
 
 ### Datasets
 
 * **[1]** Elliptic, [www.elliptic.co](http://www.elliptic.co).
 * **[2]** M. Weber, G. Domeniconi, J. Chen, D. K. I. Weidele, C. Bellei, T. Robinson, C. E. Leiserson, "Anti-Money Laundering in Bitcoin: Experimenting with Graph Convolutional Networks for Financial Forensics", KDD ’19 Workshop on Anomaly Detection in Finance, August 2019, Anchorage, AK, USA.
-* **[DiaGraph]** [Maha Trabelsi - Node Classification Under Noise](https://github.com/mahatrabelsi1/GNN-MVP-Node-Classification-Under-Noise) – This project provided foundational inspiration for the noise-robustness and automated evaluation framework used in this competition.
----
+
