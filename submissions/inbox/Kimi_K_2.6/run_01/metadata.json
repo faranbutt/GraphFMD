@@ -1,0 +1,7 @@
+{
+  "team": "Kimi K 2.6",
+  "run_id": "run_01",
+  "author_type": "llm",
+  "model": "GraphSAGE",
+  "notes": "3-layer GraphSAGE (hidden=128) with BatchNorm, dropout=0.4, feature standardization, class-weighted CE loss, stratified train/val split, early stopping on macro-F1."
+}
