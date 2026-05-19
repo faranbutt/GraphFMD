@@ -14,15 +14,16 @@
 | 11 | Sargam1412 | **0.76659330** | human | `BiGCN` | 2026-03-31 14:31:39 UTC |
 | 12 | llm_claude_opus-47 | **0.76209360** | LLM | `GraphSAGE (3-layer)` | 2026-05-16 13:37:20 UTC |
 | 13 | tasneem-mselim | **0.73522504** | human | `GraphSAGE.` | 2026-04-10 11:14:33 UTC |
-| 14 | bjayadikary | **0.71094004** | human | `GCN` | 2026-03-23 01:40:28 UTC |
-| 15 | hadilaff | **0.66942255** | human | `GraphSAGE (3-layer)` | 2026-03-05 08:26:00 UTC |
-| 16 | Murad-Hossen | **0.65300333** | human | `GraphSAGE` | 2026-04-04 01:26:47 UTC |
-| 17 | TugaAhmed | **0.63416355** | human | `GCN` | 2026-04-04 21:53:40 UTC |
-| 18 | El-Ikram | **0.63305426** | human | `GCN` | 2026-04-04 00:19:42 UTC |
-| 19 | Sanae ZRIGUI | **0.62051443** | human | `GCN ` | 2026-03-07 21:24:20 UTC |
-| 20 | emmakowu3579-ui | **0.61423345** | human | `Inductive GraphSAGE` | 2026-03-21 15:46:50 UTC |
-| 21 | VinitSingroha | **0.60909841** | human | `Dual-Path Degree-Gated GraphSAGE` | 2026-03-07 19:06:09 UTC |
-| 22 | mahatrabelsi1 | **0.58539933** | human | `` | 2026-03-28 21:07:08 UTC |
-| 23 | samuelmatia | **0.52378556** | human | `Hybrid GNN` | 2026-03-27 12:20:52 UTC |
-| 24 | NoorMajdoub | **0.48952987** | human | `GAT` | 2026-03-14 15:54:24 UTC |
-| 25 | abdksm | **0.40297732** | human | `GCN` | 2026-04-03 11:10:56 UTC |
+| 14 | Llama_33_70B | **0.72790402** | human | `GNN` | 2026-05-19 05:19:13 UTC |
+| 15 | bjayadikary | **0.71094004** | human | `GCN` | 2026-03-23 01:40:28 UTC |
+| 16 | hadilaff | **0.66942255** | human | `GraphSAGE (3-layer)` | 2026-03-05 08:26:00 UTC |
+| 17 | Murad-Hossen | **0.65300333** | human | `GraphSAGE` | 2026-04-04 01:26:47 UTC |
+| 18 | TugaAhmed | **0.63416355** | human | `GCN` | 2026-04-04 21:53:40 UTC |
+| 19 | El-Ikram | **0.63305426** | human | `GCN` | 2026-04-04 00:19:42 UTC |
+| 20 | Sanae ZRIGUI | **0.62051443** | human | `GCN ` | 2026-03-07 21:24:20 UTC |
+| 21 | emmakowu3579-ui | **0.61423345** | human | `Inductive GraphSAGE` | 2026-03-21 15:46:50 UTC |
+| 22 | VinitSingroha | **0.60909841** | human | `Dual-Path Degree-Gated GraphSAGE` | 2026-03-07 19:06:09 UTC |
+| 23 | mahatrabelsi1 | **0.58539933** | human | `` | 2026-03-28 21:07:08 UTC |
+| 24 | samuelmatia | **0.52378556** | human | `Hybrid GNN` | 2026-03-27 12:20:52 UTC |
+| 25 | NoorMajdoub | **0.48952987** | human | `GAT` | 2026-03-14 15:54:24 UTC |
+| 26 | abdksm | **0.40297732** | human | `GCN` | 2026-04-03 11:10:56 UTC |
