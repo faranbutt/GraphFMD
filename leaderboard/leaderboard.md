@@ -16,7 +16,7 @@
 | 13 | tasneem-mselim | **0.73522504** | human | `GraphSAGE.` | 2026-04-10 11:14:33 UTC |
 | 14 | Llama_33_70B | **0.72790402** | human | `GNN` | 2026-05-19 05:19:13 UTC |
 | 15 | bjayadikary | **0.71094004** | human | `GCN` | 2026-03-23 01:40:28 UTC |
-| 16 | Qwen2.5-Coder-32B-Instruct | **0.69819912** | human | `GCNConv` | 2026-05-20 09:24:00 UTC |
+| 16 | Qwen2.5-Coder-32B-Instruct | **0.69819912** | LLM | `GCNConv` | 2026-05-20 09:24:00 UTC |
 | 17 | hadilaff | **0.66942255** | human | `GraphSAGE (3-layer)` | 2026-03-05 08:26:00 UTC |
 | 18 | Murad-Hossen | **0.65300333** | human | `GraphSAGE` | 2026-04-04 01:26:47 UTC |
 | 19 | TugaAhmed | **0.63416355** | human | `GCN` | 2026-04-04 21:53:40 UTC |
