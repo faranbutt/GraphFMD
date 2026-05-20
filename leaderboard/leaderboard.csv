@@ -28,3 +28,4 @@ llm_gemini_25_pro,form-submission,0.83604370,2026-05-17 16:10:48 UTC,LLM,GATv2,S
 AiIkram,form-submission,0.81830220,2026-05-18 14:36:37 UTC,human,GCN,Submitted via Secure Google Form
 Claude_opus_4_6,form-submission,0.81830220,2026-05-18 14:43:32 UTC,LLM,GCN,Submitted via Secure Google Form
 Llama_33_70B,form-submission,0.72790402,2026-05-19 05:19:13 UTC,human,GNN,Submitted via Secure Google Form
+Qwen2.5-Coder-32B-Instruct,form-submission,0.69819912,2026-05-20 09:24:00 UTC,human,GCNConv,Submitted via Secure Google Form
