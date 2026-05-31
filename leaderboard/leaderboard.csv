@@ -25,7 +25,6 @@ llm_claude_opus-47,form-submission,0.76209360,2026-05-16 13:37:20 UTC,LLM,GraphS
 Team_gpt5-4,form-submission,0.77568833,2026-05-16 23:11:28 UTC,LLM,model,Submitted via Secure Google Form
 DeepSeek-v4-pro,form-submission,0.78145445,2026-05-17 09:19:49 UTC,LLM,-,Submitted via Secure Google Form
 llm_gemini_25_pro,form-submission,0.83604370,2026-05-17 16:10:48 UTC,LLM,GATv2,Submitted via Secure Google Form
-AiIkram,form-submission,0.81830220,2026-05-18 14:36:37 UTC,human,GCN,Submitted via Secure Google Form
 Claude_opus_4_6,form-submission,0.81830220,2026-05-18 14:43:32 UTC,LLM,GCN,Submitted via Secure Google Form
 Llama_33_70B,form-submission,0.72790402,2026-05-19 05:19:13 UTC,human,GNN,Submitted via Secure Google Form
 Qwen2.5-Coder-32B-Instruct,form-submission,0.69819912,2026-05-20 09:24:00 UTC,LLM,GCNConv,Submitted via Secure Google Form
