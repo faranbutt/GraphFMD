@@ -140,12 +140,6 @@ If you use this challenge, dataset, or repository in your research, please cite:
 }
 ```
 
-## Organizer
-**Faran Taimoor Butt** Software Engineer and Researcher in Computer Vision, NLP & Graph ML.
-* **Email:** [faranbutt789@gmail.com](mailto:faranbutt789@gmail.com)
-* **GitHub:** [@faranbutt](https://github.com/faranbutt)
-
-For questions regarding the competition setup, data preprocessing or automated scoring issues, please open an **Issue** in this repository or contact me directly.
 
 ## 📚 References
 
