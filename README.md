@@ -126,6 +126,7 @@ When a Pull Request is opened the bot will
 └── docs/                   # Interactive Leaderboard
 └── images/                   
 ```
+<!--
 
 ## 📝 Citation
 
@@ -153,3 +154,4 @@ If you use this challenge, dataset, or repository in your research, please cite:
 * **[1]** Elliptic, [www.elliptic.co](http://www.elliptic.co).
 * **[2]** M. Weber, G. Domeniconi, J. Chen, D. K. I. Weidele, C. Bellei, T. Robinson, C. E. Leiserson, "Anti-Money Laundering in Bitcoin: Experimenting with Graph Convolutional Networks for Financial Forensics", KDD ’19 Workshop on Anomaly Detection in Finance, August 2019, Anchorage, AK, USA.
 
+-->
