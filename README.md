@@ -10,12 +10,12 @@ This repository is designed for **Human vs. LLM** task.
 <img src="images/outputs.png" width="800" />
 
 
-
+<!--
 
 ## 🏆 Leaderboard
 
 View the real-time rankings here: **[https://faranbutt.github.io/GraphFMD/](https://faranbutt.github.io/GraphFMD/)**
-
+-->
 
 ## 🚀 How to Participate
 
